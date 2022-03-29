@@ -40,4 +40,4 @@ abuelo(X, Y) :- padre(X, Z), progenitor(Z, Y).
 abuela(X, Y) :- madre(X, Z), progenitor(Z, Y).
 
 hermana(X,Y) :- femenino(X),progenitor(Z,X), progenitor(Z,Y),  X\=Y.
-tía(X,Y) :- femenino(X), hermana(X, Z), progenitor(Z, Y).
+tia(X,Y) :- femenino(X), hermana(X, Z), progenitor(Z, Y).
