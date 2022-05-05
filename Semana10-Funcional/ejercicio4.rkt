@@ -1,0 +1,23 @@
+;recibe la cantidad de posiciones que desea rotar, el lado ya sea derecha(1)
+;o izquierda(0), y la lista ha rotar
+;(rotar 3 1 '(1 2 3 4))
+;(1 2 3 4 () () ())
+;(rotar 3 0 '(1 2 3 4))
+;(() () () 1 2 3 4)
+(define (rotar n l lista)
+  (cond((equal? l 1)
+        (append lista (espacios n '())))
+       ((equal? l 0)
+        (append (espacios n '()) lista))
+       )
+  )
+;devuelve una lista con los espacios que se deben de rotar, para unir esta
+;con la lista principal
+;(espacios 3 '())
+;(() () ())
+(define (espacios n listaVacia)
+  (cond ((equal? n 0)
+         listaVacia)
+        (else (espacios (- n 1) (append (list '()) listaVacia)))
+        )
+  )
